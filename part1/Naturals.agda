@@ -32,10 +32,10 @@ inc ((x I) I) = ((inc x) O) O
 -- need recursive binary sum here
 _&_ : Bin → Bin → Bin
 ⟨⟩ & n = n
+n & ⟨⟩ = n
 (m O) & (n O) = (m & n) O
 (m O) & (n I) = (m & n) I
-(m O) & ⟨⟩ = m O
-(m I) & n = m & n
+(m I) & n = inc (m & n)
 
 
 to : ℕ → Bin
