@@ -35,7 +35,8 @@ _&_ : Bin → Bin → Bin
 n & ⟨⟩ = n
 (m O) & (n O) = (m & n) O
 (m O) & (n I) = (m & n) I
-(m I) & n = inc (m & n)
+(m I) & (n O) = (m & n) I
+(m I) & (n I) = inc ((m & n) O)
 
 
 to : ℕ → Bin
